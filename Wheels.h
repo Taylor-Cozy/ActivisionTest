@@ -13,7 +13,6 @@ public:
     void CreateWords(vector<string>& possibleWords, string& currentWord, int linesIndex = 0);
 
 protected:
-    int wheelCount;
     vector<string> possibleWords;
     Dictionary& dict;
 };

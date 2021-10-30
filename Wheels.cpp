@@ -2,7 +2,13 @@
 
 Wheels::Wheels(string filepath, Dictionary& dict) : FileHandler(filepath), dict(dict)
 {
-	wheelCount = lines.size() - 2; // Could also use stoi(lines.at(0))
+	try {
+		stoi(lines.front());
+	}
+	catch (const exception& e) {
+		cout << "Invalid Wheels.txt format." << endl;
+		exit(1);
+	}
 	lines.erase(lines.begin(), lines.begin() + 2);
 }
 

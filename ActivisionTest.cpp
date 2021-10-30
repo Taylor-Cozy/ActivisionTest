@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     if (argc == 1) {
-        cout << "Usage: ActivisionTest.exe Dictionary.txt Wheels.txt";
+        cout << "Usage: find_words.exe Dictionary.txt Wheels.txt";
         exit(1);
     }
 
