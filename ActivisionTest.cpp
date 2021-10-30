@@ -7,8 +7,6 @@
 #include <chrono>
 using namespace std;
 
-
-
 int main(int argc, char* argv[])
 {
     cout << "You have entered " << argc << " parameters: " << endl;

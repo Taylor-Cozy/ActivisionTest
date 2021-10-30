@@ -16,8 +16,6 @@ public:
 	FileHandler(string);
 	virtual ~FileHandler();
 
-
-
 protected:
 	string filepath;
 	ifstream file;
