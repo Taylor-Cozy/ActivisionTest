@@ -5,7 +5,7 @@ Wheels::Wheels(string filepath, Dictionary& dict) : FileHandler(filepath), dict(
 	try {
 		stoi(lines.front());
 	}
-	catch (const exception& e) {
+	catch (...) {
 		cout << "Invalid Wheels.txt format." << endl;
 		exit(1);
 	}

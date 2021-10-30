@@ -17,16 +17,16 @@ int main(int argc, char* argv[])
     }
 
     auto t1 = chrono::high_resolution_clock::now();
-    Dictionary dictionary(argv[1]);
+    Dictionary dictionary(argv[2]);
     auto t2 = chrono::high_resolution_clock::now();
-    Wheels wheels(argv[2], dictionary);
+    Wheels wheels(argv[1], dictionary);
     auto t3 = chrono::high_resolution_clock::now();
     wheels.GeneratePossibleWords();
     auto t4 = chrono::high_resolution_clock::now();
 
     wheels.ShowResults();
 
-#if _DEBUG
+    #if _DEBUG
     chrono::duration<double, std::milli> dictLoad = t2 - t1;
     chrono::duration<double, std::milli> wheelsLoad = t3 - t2;
     chrono::duration<double, std::milli> generate = t4 - t3;
@@ -36,5 +36,5 @@ int main(int argc, char* argv[])
     cout << "Loaded Wheels.txt in\t\t" << wheelsLoad.count() << "ms" << endl;
     cout << "Generated Words in\t\t" << generate.count() << "ms" << endl;
     cout << "Total Time Taken: \t\t" << total.count() << "ms" << endl;
-#endif
+    #endif
 }
