@@ -36,7 +36,7 @@ void Wheels::CreateWords(string& currentWord, int linesIndex)
 			if (index >= 0) {
 				possibleWords.push_back(dict.GetWord(index));
 			}
-			CreateWords(currentWord, linesIndex+1);
+			CreateWords(currentWord, linesIndex + 1);
 		}
 		currentWord.pop_back();
 	}

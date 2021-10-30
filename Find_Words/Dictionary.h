@@ -20,7 +20,7 @@ public:
         return left == right ? true : false;
     };
     bool partialMatch(string left, string right) const {
-        return left .rfind(right, 0) == 0 ? true : false;
+        return left.rfind(right, 0) == 0 ? true : false;
     };
 
     string GetWord(int index) const {

@@ -1,6 +1,6 @@
 #include "Dictionary.h"
 
-Dictionary::Dictionary(string filepath) : FileHandler(filepath){
+Dictionary::Dictionary(string filepath) : FileHandler(filepath) {
 	// Some overhead but means binary search can be used
 	// O(n log n)
 	sort(lines.begin(), lines.end());

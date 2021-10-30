@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     if (argc == 1) {
-        cout << "Usage: find_words.exe Dictionary.txt Wheels.txt";
+        cout << "Usage: find_words.exe wheels.txt dictionary.txt";
         exit(1);
     }
 
@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 
     wheels.ShowResults();
 
-    #if _DEBUG
+#if _DEBUG
     chrono::duration<double, std::milli> dictLoad = t2 - t1;
     chrono::duration<double, std::milli> wheelsLoad = t3 - t2;
     chrono::duration<double, std::milli> generate = t4 - t3;
@@ -36,5 +36,5 @@ int main(int argc, char* argv[])
     cout << "Loaded Wheels.txt in\t\t" << wheelsLoad.count() << "ms" << endl;
     cout << "Generated Words in\t\t" << generate.count() << "ms" << endl;
     cout << "Total Time Taken: \t\t" << total.count() << "ms" << endl;
-    #endif
+#endif
 }
