@@ -152,6 +152,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ActivisionTest.cpp" />
+    <ClCompile Include="Dictionary.cpp" />
+    <ClCompile Include="FileHandler.cpp" />
+    <ClCompile Include="Wheels.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dictionary.h" />
+    <ClInclude Include="FileHandler.h" />
+    <ClInclude Include="Wheels.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
