@@ -10,7 +10,6 @@ public:
     virtual ~Wheels() {};
 
     void GeneratePossibleWords();
-    int GetWheelCount() const { return wheelCount; };
     void CreateWords(vector<string>& possibleWords, string& currentWord, int linesIndex = 0);
 
 protected:

@@ -1,23 +1,25 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <chrono>
+
 #include "FileHandler.h"
 #include "Dictionary.h"
 #include "Wheels.h"
-#include <chrono>
+
 using namespace std;
 
 int main(int argc, char* argv[])
 {
-    cout << "You have entered " << argc << " parameters: " << endl;
-    for (int x = 0; x < argc; x++) {
-        cout << argv[x] << endl;
+    if (argc == 1) {
+        cout << "Usage: ActivisionTest.exe Dictionary.txt Wheels.txt";
+        exit(1);
     }
 
     auto t1 = chrono::high_resolution_clock::now();
-    Dictionary dictionary("dictionary.txt");
+    Dictionary dictionary(argv[1]);
     auto t2 = chrono::high_resolution_clock::now();
-    Wheels wheels("wheels.txt", dictionary);
+    Wheels wheels(argv[2], dictionary);
     auto t3 = chrono::high_resolution_clock::now();
     wheels.GeneratePossibleWords();
     auto t4 = chrono::high_resolution_clock::now();

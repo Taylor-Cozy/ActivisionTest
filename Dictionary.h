@@ -1,5 +1,7 @@
 #pragma once
 #include "FileHandler.h"
+#include <set>
+#include <algorithm>
 
 class Dictionary :
     public FileHandler

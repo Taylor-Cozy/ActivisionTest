@@ -2,18 +2,16 @@
 
 #include <fstream>
 #include <string>
-#include <set>
 #include <iostream>
 #include <vector>
-#include <chrono>
-#include <algorithm>
+#include <exception>
 
 using namespace std;
 
 class FileHandler
 {
 public:
-	FileHandler(string);
+	FileHandler(string) throw (invalid_argument);
 	virtual ~FileHandler();
 
 protected:
