@@ -16,11 +16,11 @@ void Wheels::GeneratePossibleWords()
 {
 	string currentWord = "";
 	for (int i = 0; i <= lines.size() - 2; i++) {
-		CreateWords(possibleWords, currentWord, i);
+		CreateWords(currentWord, i);
 	}
 }
 
-void Wheels::CreateWords(vector<string>& possibleWords, string& currentWord, int linesIndex)
+void Wheels::CreateWords(string& currentWord, int linesIndex)
 {
 	if (linesIndex >= lines.size())
 		return;
@@ -34,9 +34,9 @@ void Wheels::CreateWords(vector<string>& possibleWords, string& currentWord, int
 		if (index >= 0) {
 			index = dict.BinarySearch(currentWord, &Dictionary::completeMatch);
 			if (index >= 0) {
-				dict.FoundWord(index);
+				possibleWords.push_back(dict.GetWord(index));
 			}
-			CreateWords(possibleWords, currentWord, linesIndex+1);
+			CreateWords(currentWord, linesIndex+1);
 		}
 		currentWord.pop_back();
 	}

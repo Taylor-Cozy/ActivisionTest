@@ -1,10 +1,13 @@
 #include "Dictionary.h"
 
 Dictionary::Dictionary(string filepath) : FileHandler(filepath){
+	// Some overhead but means binary search can be used
+	// O(n log n)
 	sort(lines.begin(), lines.end());
 }
 
-int Dictionary::BinarySearch(string searchToken, bool (Dictionary::* compare)(string, string))
+// O(log n)
+int Dictionary::BinarySearch(string searchToken, bool (Dictionary::* compare)(string, string) const)
 {
 	int lowerBound = 0;
 	int upperBound = lines.size() - 1;
@@ -28,29 +31,10 @@ int Dictionary::BinarySearch(string searchToken, bool (Dictionary::* compare)(st
 	}
 }
 
-void Dictionary::FoundWord(int index)
-{
-	matches.insert(lines.at(index));
-}
-
 void Dictionary::ShowResults() const
 {
 	for (auto x : matches)
 		cout << x << endl;
 
 	cout << "Found " << matches.size() << " words." << endl;
-}
-
-bool Dictionary::completeMatch(string left, string right)
-{
-	if (left == right)
-		return true;
-	return false;
-}
-
-bool Dictionary::partialMatch(string search, string startsWith)
-{
-	if (search.rfind(startsWith, 0) == 0)
-		return true;
-	return false;
 }
