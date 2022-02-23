@@ -16,6 +16,7 @@ public:
         matches.push_back(lines.at(index));
     };
     void ShowResults() const;
+
     bool completeMatch(string left, string right) const {
         return left == right ? true : false;
     };

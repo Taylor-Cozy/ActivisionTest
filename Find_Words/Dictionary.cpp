@@ -12,10 +12,7 @@ int Dictionary::BinarySearch(string searchToken, bool (Dictionary::* compare)(st
 	int lowerBound = 0;
 	int upperBound = lines.size() - 1;
 
-	while (true) {
-		if (upperBound < lowerBound)
-			return -1;
-
+	while (upperBound >= lowerBound) {
 		int midPoint = lowerBound + (upperBound - lowerBound) / 2;
 		if ((this->*compare)(lines.at(midPoint), searchToken)) // fnc ptr -> either partial match or full match for word
 			return midPoint;
@@ -29,6 +26,7 @@ int Dictionary::BinarySearch(string searchToken, bool (Dictionary::* compare)(st
 			}
 		}
 	}
+	return -1;
 }
 
 void Dictionary::ShowResults() const
